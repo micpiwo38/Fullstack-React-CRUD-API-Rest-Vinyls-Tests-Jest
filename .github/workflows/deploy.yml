@@ -1,0 +1,28 @@
+name: React-CI-CD
+#Declencheur => trigger (flux de travail)
+on:
+  push:
+    branches: [main] #declencher a chaque push sur la banche main
+#les job sont des taches a executé
+jobs:
+  build-and-deploy: #environement d'execution des taches succesivent
+    runs-on: ubuntu-latest #derniere vesion de ubunt linux
+
+    steps:
+      - name: Checkout code # recuperer les source du depot gothun concerner
+        uses: actions/checkout@v4
+      #installer node js dans le conteneur githuaction
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+      - name: Install dependencies
+        run: npm install
+      - name: Run test
+        run: npm test -- --watchAll=false
+      - name: Deploy to Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
+          branch: gh-pages
