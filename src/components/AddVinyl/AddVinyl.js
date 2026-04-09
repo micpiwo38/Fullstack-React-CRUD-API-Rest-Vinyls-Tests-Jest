@@ -88,7 +88,7 @@ const AddVinyl = ({ onProductAdded, setDisplayForm }) => {
         ) : (
           <div className="container shadow rounded mt-3 p-3">
             <h4 className="text-center text-warning">Ajouter un disque</h4>
-            <div className="mt-3">
+            <div className="mt-3 p-3">
               <input
                 type="text"
                 className="form-control"
