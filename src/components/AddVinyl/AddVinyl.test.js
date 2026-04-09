@@ -13,7 +13,7 @@ test("ajoute un vinyl via le formulaire et met à jour le DOM", async () => {
       id: 1,
       vinyl_name: "Nirvana",
       vinyl_description: "In Bloom",
-      vinyl_price: 45.25,
+      vinyl_price: "45.25",
       vinyl_image: "img.jpg",
     },
   });
@@ -34,7 +34,7 @@ test("ajoute un vinyl via le formulaire et met à jour le DOM", async () => {
   });
 
   fireEvent.change(screen.getByPlaceholderText("125.25"), {
-    target: { value: 45.25 },
+    target: { value: "45.25" },
   });
 
   fireEvent.change(screen.getByPlaceholderText("URL de l'image"), {
@@ -51,7 +51,7 @@ test("ajoute un vinyl via le formulaire et met à jour le DOM", async () => {
   expect(axios.post).toHaveBeenCalledWith("http://localhost:3001/vinyls", {
     vinyl_name: "Nirvana",
     vinyl_description: "In Bloom",
-    vinyl_price: 45.25,
+    vinyl_price: "45.25",
     vinyl_image: "img.jpg",
   });
 
@@ -59,7 +59,7 @@ test("ajoute un vinyl via le formulaire et met à jour le DOM", async () => {
     id: 1,
     vinyl_name: "Nirvana",
     vinyl_description: "In Bloom",
-    vinyl_price: 45.25,
+    vinyl_price: "45.25",
     vinyl_image: "img.jpg",
   });
 
