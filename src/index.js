@@ -1,17 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { createBrowserRouter } from "react-router";
+import { RouterProvider } from "react-router/dom";
+import "bootswatch/dist/minty/bootstrap.css";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
+import Vinyls from "./components/Vinyls/Vinyls";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const routeur = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <PageNotFound />,
+  },
+  {
+    path: "/vinyls",
+    element: <Vinyls />,
+    errorElement: <PageNotFound />,
+  },
+]);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<RouterProvider router={routeur} />);

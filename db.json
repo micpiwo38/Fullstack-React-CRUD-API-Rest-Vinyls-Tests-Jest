@@ -1,0 +1,60 @@
+{
+  "vinyls": [
+    {
+      "id": "1",
+      "vinyl_name": "Nirvana",
+      "vinyl_description": "In bloom",
+      "vinyl_price": 45.25,
+      "vinyl_image": "https://m.media-amazon.com/images/I/61vJcHw2MWL.jpg"
+    },
+    {
+      "id": "3",
+      "vinyl_name": "Bob Marley",
+      "vinyl_description": "Uprising",
+      "vinyl_price": 24.25,
+      "vinyl_image": "https://cdn.cultura.com/cdn-cgi/image/width=830/media/pim/TITELIVE/9_0602547276285.jpg"
+    },
+    {
+      "id": "4",
+      "vinyl_name": "IAM",
+      "vinyl_description": "L'école du micro d'argent",
+      "vinyl_price": 56.35,
+      "vinyl_image": "https://m.media-amazon.com/images/I/71w0l+-FboL._UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "5",
+      "vinyl_name": "Ez3kiel",
+      "vinyl_description": "Naphtaline",
+      "vinyl_price": 146.35,
+      "vinyl_image": "https://cdn.myportfolio.com/dc73163a530c6bef28a4403e37542d41/b4ba1be3fa7a2dcc6ede048e_rw_1200.jpg?h=d13bfe88a57a6c59a3dad49c03bbc890"
+    },
+    {
+      "id": "026f",
+      "vinyl_name": "Pink Flyod",
+      "vinyl_description": "Dark Side Of The Moon",
+      "vinyl_price": "125.35",
+      "vinyl_image": "https://m.media-amazon.com/images/I/51UtWpxbNYL._UF894,1000_QL80_.jpg"
+    },
+    {
+      "id": "715c",
+      "vinyl_name": "Primus",
+      "vinyl_description": "Brow Album",
+      "vinyl_price": "48.35",
+      "vinyl_image": "https://m.media-amazon.com/images/I/81mi0tw6RiL.jpg"
+    },
+    {
+      "id": "b0ce",
+      "vinyl_name": "SBKRTK",
+      "vinyl_description": "Emphasis",
+      "vinyl_price": "78.25",
+      "vinyl_image": "https://static.fnac-static.com/multimedia/FR/Images_Produits/FR/fnac.com/Visual_Principal_340/2/2/0/0634904606022/tsp20120919083929/Sbtrkt.jpg"
+    },
+    {
+      "id": "9997",
+      "vinyl_name": "RJD2",
+      "vinyl_description": "DeadRinger",
+      "vinyl_price": "124.35",
+      "vinyl_image": "https://cdn-images.dzcdn.net/images/cover/893ebb789d7748c80cf3b18b5c81cdbd/0x1900-000000-80-0-0.jpg"
+    }
+  ]
+}
