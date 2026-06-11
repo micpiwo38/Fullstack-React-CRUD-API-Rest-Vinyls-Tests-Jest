@@ -14,7 +14,7 @@ beforeEach(() => {
 });
 
 test("met a jour un vinyls via le formulaire et appelle des callbasks", async () => {
-  //1. Un objet faux vinyl
+  //1. Un objet faux vinyl de test
   const fakeVinyl = {
     id: 1,
     vinyl_name: "Nirvana",
