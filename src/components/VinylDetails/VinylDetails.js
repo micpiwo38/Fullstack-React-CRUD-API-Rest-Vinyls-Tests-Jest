@@ -1,4 +1,4 @@
-const VinylDetails = ({ vinyl }) => {
+const VinylDetails = ({ vinyl, toto }) => {
   return (
     <>
       <div className="container shadow mt-5 p-3 rounded">

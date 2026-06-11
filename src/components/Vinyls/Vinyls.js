@@ -91,7 +91,9 @@ const Vinyls = () => {
         </nav>
       </header>
       <div className="container shadow mt-5 p-3 rounded">
-        <h1 className="text-center text-bg-info p-3">Nos disques vinyls !!!!!</h1>
+        <h1 className="text-center text-bg-info p-3">
+          Nos disques vinyls !!!!!
+        </h1>
         <div className="text-center">
           <button
             type="button"

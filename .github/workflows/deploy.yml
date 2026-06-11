@@ -2,14 +2,15 @@ name: React-CI-CD
 #Declencheur => trigger (flux de travail)
 on:
   push:
-    branches: [main] #declencher a chaque push sur la banche main
+    branches: [ main ] #declencher a chaque push sur la banche main
 #les job sont des taches a executé
 jobs:
-  build-and-deploy: #environement d'execution des taches succesivent
+  build-and-deploy:
+    #environement d'execution des taches succesivent
     runs-on: ubuntu-latest #derniere vesion de ubunt linux
 
     steps:
-      - name: Checkout code # recuperer les source du depot gothun concerner
+      - name: Checkout code # recuperer les source du depot github  concerner
         uses: actions/checkout@v4
       #installer node js dans le conteneur githuaction
       - name: Install Node.js
