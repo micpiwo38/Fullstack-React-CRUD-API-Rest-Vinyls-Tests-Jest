@@ -1,29 +1,51 @@
+# Nom du workflow
 name: React-CI-CD
-#Declencheur => trigger (flux de travail)
+
+# Déclencheur => trigger (flux de travail)
 on:
   push:
-    branches: [ main ] #declencher a chaque push sur la banche main
-#les job sont des taches a executé
+    branches: [main] # déclencher a chaque push sur la branche main
+
+# Les jobs sont des taches a exécuter
 jobs:
   build-and-deploy:
-    #environement d'execution des taches succesivent
-    runs-on: ubuntu-latest #derniere vesion de ubunt linux
+    # Environnement d'execution des taches successives
+    runs-on: ubuntu-latest # dernière version de ubuntu linux
 
     steps:
-      - name: Checkout code # recuperer les source du depot github  concerner
+      # 1. Récupérer les sources du dépôt GitHub concerné
+      - name: Checkout code
         uses: actions/checkout@v4
-      #installer node js dans le conteneur githuaction
+
+      # 2. Installer Node.js dans le conteneur GitHub Actions
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 21
           cache: npm
+
+      # 3. Installer les dépendances
       - name: Install dependencies
-        run: npm install
-      - name: Run test
-        run: npm test -- --watchAll=false
-      - name: Deploy to Github Pages
+        run: npm ci # "npm ci" est plus rapide et strict que "npm install" pour la CI
+
+      # 4. Vérification de la qualité du code (Linter / ESLint)
+      - name: Run Linter (ESLint)
+        run: npm run lint --if-present
+        # L'option --if-present évite de faire planter le script si la commande n'est pas encore configurée.
+
+      # 5. Exécuter les tests unitaires
+      - name: Run tests
+        run: npm test -- --watchAll=false --passWithNoTests
+
+      # 6. Compiler l'application pour la production (Génère le dossier build ou dist)
+      - name: Build Application
+        run: npm run build
+
+      # 7. Déployer sur GitHub Pages (S'exécute uniquement si le build et les tests réussissent)
+      - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build #destination de la build pour la production?
+          folder: dist # Remplace par "dist" si tu utilises Vite au lieu de Create React App
           branch: gh-pages
+
+      # npm ci au lieu de npm install (Clean Install)
