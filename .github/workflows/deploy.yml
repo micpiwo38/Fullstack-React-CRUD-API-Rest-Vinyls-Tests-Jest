@@ -41,7 +41,7 @@ jobs:
       - name: Build Application
         run: npm run build
 
-      # 7. Déployer sur GitHub Pages (S'exécute uniquement si le build et les tests réussissent)
+      # 7. Déployer sur GitHub Pages (S'exécute uniquement si le build et les tests réussissent) ...
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
