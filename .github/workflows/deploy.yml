@@ -26,7 +26,7 @@ jobs:
 
       # 3. Installer les dépendances
       - name: Install dependencies
-        run: npm ci # "npm ci" est plus rapide et strict que "npm install" pour la CI
+        run: npm install # "npm ci" est plus rapide et strict que "npm install" pour la CI
 
       # 4. Vérification de la qualité du code (Linter / ESLint)
       - name: Run Linter (ESLint)
